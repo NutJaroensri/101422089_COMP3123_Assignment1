@@ -68,7 +68,7 @@ routes.delete("/employees", (req, res) => {
     employeeModel.findByIdAndDelete(employeeId)
     .then((employee) => {
         if(employee){
-            res.status(200).send({ message: "Employee deleted successfully."})
+            res.status(204).send({ message: "Employee deleted successfully."})
         }else {
             res.status(404).send({ message: "There is no employee with this ID" });
         }
